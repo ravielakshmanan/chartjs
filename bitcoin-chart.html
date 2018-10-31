@@ -6,9 +6,9 @@
 </head>
 <body>
 
-	<div id="alert">
+	<!-- <div id="alert">
 	    <h3>Please switch to landscape mode to view the interactive graphic.</h3>
-	</div>
+	</div> -->
 	<div id="chart_div">
 	    <h3>Bitcoint Market Price (USD)</h3>
 	    <p><b>The wild Bitcoin ride from 2008 to 2018 (No value until August 2010)</b></p>
@@ -129,27 +129,27 @@
 	    	}
 	    });
 	    
-	    $(document).ready(function() {
-	        var x = document.getElementById("chart_div");
-	        var alt = document.getElementById("alert");
-	        alt.style.display = "none";
-	        if(window.innerHeight > window.innerWidth){
-	            x.style.display = "none";
-	            alt.style.display = "block";
-	        } else {
-	            x.style.display = "block";
-	            alt.style.display = "none";
-	        }
+	   //  $(document).ready(function() {
+	   //      var x = document.getElementById("chart_div");
+	   //      var alt = document.getElementById("alert");
+	   //      alt.style.display = "none";
+	   //      if(window.innerHeight > window.innerWidth){
+	   //          x.style.display = "none";
+	   //          alt.style.display = "block";
+	   //      } else {
+	   //          x.style.display = "block";
+	   //          alt.style.display = "none";
+	   //      }
 	        
-	        $( window ).on( "orientationchange", function( event ) {
-	        	x.style.display = "block";
-	            alt.style.display = "none";
-	            if(window.innerHeight > window.innerWidth){
-	                x.style.display = "none";
-	                alt.style.display = "block";
-	            }
-	        });
-	   });
+	   //      $( window ).on( "orientationchange", function( event ) {
+	   //      	x.style.display = "block";
+	   //          alt.style.display = "none";
+	   //          if(window.innerHeight > window.innerWidth){
+	   //              x.style.display = "none";
+	   //              alt.style.display = "block";
+	   //          }
+	   //      });
+	   // });
 	</script>
 
 </body>
