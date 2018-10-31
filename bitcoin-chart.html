@@ -144,15 +144,14 @@
 	            alt.style.display = "none";
 	        }
 	        
-	        $( window ).on( "orientationchange", function( event ) {
-	        	x.style.display = "block";
-	            alt.style.display = "none";
-	            console.log("height: " + window.innerHeight);
-	        	console.log("width: " + window.innerWidth);
-	        	if(window.innerWidth < 500){
-	                x.style.display = "none";
-	                alt.style.display = "block";
-	            }
+	        $(window).on( "orientationchange", function(event) {
+	        	if (window.orientation == 0) {
+	        		x.style.display = "none";
+		            alt.style.display = "block";
+	        	} else {
+	        		x.style.display = "block";
+		            alt.style.display = "none";
+	        	}
 	        });
 	   });
 	</script>
