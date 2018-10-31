@@ -134,6 +134,8 @@
 	        var x = document.getElementById("chart_div");
 	        var alt = document.getElementById("alert");
 	        alt.style.display = "none";
+	        console.log(window.innerHeight);
+	        console.log(window.innerWidth);
 	        if(window.innerWidth < 600){
 	            x.style.display = "none";
 	            alt.style.display = "block";
@@ -145,7 +147,9 @@
 	        $( window ).on( "orientationchange", function( event ) {
 	        	x.style.display = "block";
 	            alt.style.display = "none";
-	            if(window.innerHeight > window.innerWidth){
+	            console.log(window.innerHeight);
+	        	console.log(window.innerWidth);
+	            if(window.innerWidth < 600){
 	                x.style.display = "none";
 	                alt.style.display = "block";
 	            }
