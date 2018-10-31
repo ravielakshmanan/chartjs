@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
@@ -52,8 +52,11 @@
 	                    'borderColor': iag_colors[i % iag_colors.length],
 	                    'backgroundColor': iag_colors[i % iag_colors.length],
 			    		'fill': false,
-			    		'borderWidth': 1,
-			    		'pointBorderWidth': 0.5,
+			    		'borderWidth': 0.5,
+			    		'borderDash': [1,2],
+			    		'pointBorderWidth': 0,
+			    		'pointRadius': 1,
+			    		'pointHoverBackgroundColor': "#000000",
 	                    'lineTension': 0,
 	                    'hidden': true
 	                });
