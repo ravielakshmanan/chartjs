@@ -2,9 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-	<style>
-
-	</style>
+	<link  rel="stylesheet" type="text/css" href="https://assets.sourcemedia.com/resource/assets/styles/site-fp.min.34e0ea736912796244f617c45fb3d47a.gz.css" />
 </head>
 <body>
 
@@ -12,8 +10,8 @@
 	    <h3>Please switch to landscape mode to view the interactive graphic.</h3>
 	</div>
 	<div id="chart_div">
-	    <h3>Bitcoint Market Price (2008-2018)</h3>
-	    <p><b>Click on the categories to see enablers by generation and investable assets.</b></p>
+	    <h3>Bitcoint Market Price (USD)</h3>
+	    <p><b>The wild Bitcoin ride from 2008 to 2018 (No value until August 2010)</b></p>
 	    <canvas height='300px' id="line_chart"></canvas>
 	    <br/>
 	    <p>Source: www.blockchain.com</p>
@@ -54,8 +52,8 @@
 	                    'borderColor': iag_colors[i % iag_colors.length],
 	                    'backgroundColor': iag_colors[i % iag_colors.length],
 			    		'fill': false,
-			    		'borderWidth': 0.5,
-			    		'pointBorderWidth': 1,
+			    		'borderWidth': 1,
+			    		'pointBorderWidth': 0.5,
 	                    'lineTension': 0,
 	                    'hidden': true
 	                });
@@ -84,7 +82,7 @@
 	                        callbacks: {
 	                            label: function(tooltipItem, data) {
 	                                let label = data.datasets[tooltipItem.datasetIndex].label;
-	                                let value = parseFloat(data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]).toFixed(1).toString();
+	                                let value = parseFloat(data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]).toFixed(1).toString() + "$";
 	                                return label + ': ' + value;
 	                            },
 				            	labelColor: function(tooltipItem, chart) {
@@ -103,7 +101,7 @@
 	                        yAxes: [{
 	                            ticks: {
 	                                callback: function(value, index, values) {
-	                                    return parseInt(value).toFixed(0).toString();
+	                                    return parseInt(value).toFixed(0).toString() + "$";
 	                                }
 	                            },
 	                            gridLines: {
