@@ -22,7 +22,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
 	<script>
-	    var data_url = 'market-price.csv';
+	    var data_url = 'bitcoin-stats.csv';
 	    
 	    var ctx = document.getElementById('line_chart').getContext('2d');
 	    
@@ -34,11 +34,16 @@
 		    var data = results.data;
 		    var fields = results.meta.fields;
 	            var xlabels = [];
-	            var col_list = ['Price']
+	            var col_list = ['Price', 'Transactions-per-day', 'Cap', 'Bitcoins', 'Transactions-per-block', 'Transactions-total', 'Difficulty']
 	            var col_dict = {};
 	            col_dict['Price'] = 'Bitcoin Price';
-
-	            var iag_colors = ["#e5127d"];
+	            col_dict['Transactions-per-day'] = 'Total Number of Daily Confirmed Bitcoin Transactions';
+	            col_dict['Cap'] = 'Market Cap';
+	            col_dict['Bitcoins'] = 'Bitcoins in Circulation';
+	            col_dict['Transactions-per-block'] = 'Total Number of Transactions Per Block';
+	            col_dict['Transactions-total'] = 'Total Number of Transactions Per Day';
+	            col_dict['Difficulty'] = 'Difficulty in Finding a New Block';
+	            var iag_colors = ["#ff7a7a", "#e5127d", "#b312e5", "#db9bbb", "#915573", "#fc0021", "#ff007f"];
 
 	            var dataset = [];
 
@@ -83,7 +88,7 @@
 	                        callbacks: {
 	                            label: function(tooltipItem, data) {
 	                                let label = data.datasets[tooltipItem.datasetIndex].label;
-	                                let value = parseFloat(data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]).toFixed(1).toString() + "$";
+	                                let value = parseFloat(data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]).toFixed(1).toString();
 	                                return label + ': ' + value;
 	                            },
 				            	labelColor: function(tooltipItem, chart) {
@@ -102,7 +107,7 @@
 	                        yAxes: [{
 	                            ticks: {
 	                                callback: function(value, index, values) {
-	                                    return parseInt(value).toFixed(0).toString() + "$";
+	                                    return parseInt(value).toFixed(0).toString();
 	                                }
 	                            },
 	                            gridLines: {

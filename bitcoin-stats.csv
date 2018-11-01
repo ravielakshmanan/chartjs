@@ -1,4 +1,4 @@
-Time,Price,Transactions,Cap,Bitcoins,Transactions-per-block,Transactions,Difficulty
+Time,Price,Transactions-per-day,Cap,Bitcoins,Transactions-per-block,Transactions-total,Difficulty
 2009-01-03 00:00:00,0,1,0,50,1,1,1
 2009-01-05 00:00:00,0,0,0,50,1,1,0
 2009-01-07 00:00:00,0,0,0,50,1,1,0
